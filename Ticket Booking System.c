@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 struct Ticket {
     int id;
     char name[50];
@@ -10,7 +9,6 @@ struct Ticket {
     struct Ticket *next;
 };
 
-// Function prototypes
 struct Ticket *bookTicket(struct Ticket *head, int id, char name[], int seat);
 struct Ticket *cancelTicket(struct Ticket *head, int id);
 void displayTickets(struct Ticket *head);
@@ -69,7 +67,6 @@ int main() {
     return 0;
 }
 
-// Book a ticket (insert at end)
 struct Ticket *bookTicket(struct Ticket *head, int id, char name[], int seat) {
     struct Ticket *newTicket = (struct Ticket *)malloc(sizeof(struct Ticket));
     newTicket->id = id;
@@ -93,7 +90,6 @@ struct Ticket *bookTicket(struct Ticket *head, int id, char name[], int seat) {
     return head;
 }
 
-// Cancel a ticket
 struct Ticket *cancelTicket(struct Ticket *head, int id) {
     if (head == NULL) {
         printf("No tickets booked.\n");
@@ -124,7 +120,6 @@ struct Ticket *cancelTicket(struct Ticket *head, int id) {
     return head;
 }
 
-// Display all tickets
 void displayTickets(struct Ticket *head) {
     if (head == NULL) {
         printf("No tickets booked.\n");
@@ -139,8 +134,6 @@ void displayTickets(struct Ticket *head) {
     }
 }
 
-
-// Search for a ticket
 int searchTicket(struct Ticket *head, int id) {
     struct Ticket *temp = head;
     int position = 1;
@@ -156,7 +149,6 @@ int searchTicket(struct Ticket *head, int id) {
     return -1;
 }
 
-// Function to count the number of booked tickets
 int countTickets(struct Ticket *head) {
     int count = 0;
     struct Ticket *temp = head;
