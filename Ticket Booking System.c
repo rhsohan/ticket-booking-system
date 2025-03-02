@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Structure for a ticket
+
 struct Ticket {
     int id;
     char name[50];
